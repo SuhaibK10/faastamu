@@ -251,7 +251,7 @@ const members = [
   },
   {
     name: "Suhaib Ahmad Khan",
-    role: "Research Team",
+    role: "Machine Learning and Research Team",
     facultyNumber: "21CABSA309",
     department: "Computer Applications",
     email: "",
@@ -416,7 +416,7 @@ const Members = () => {
               </h2>
             </div>
             <p className="text-sm text-gray-400 max-w-md">
-              The core team steers FAAST&apos;s vision, strategy, and culturefrom operations and
+              The core team steers FAAST&apos;s vision, strategy, and culture from operations and
               events to research and trading initiatives.
             </p>
           </div>

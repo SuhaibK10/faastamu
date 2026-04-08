@@ -1,13 +1,30 @@
 "use client";
 
 import React, { useState } from "react";
-import { Bitcoin, LineChart, TrendingUp, Users } from "lucide-react";
+import { Bitcoin, LineChart, TrendingUp, Users, Cpu } from "lucide-react";;
 
 export default function Teams() {
   const [selectedTeam, setSelectedTeam] = useState(null);
 
   const teams = [
     {
+  id: 6,
+  name: "Machine Learning Team",
+  icon: Cpu,
+  color: "from-emerald-500 to-teal-600",
+  glowColor: "shadow-emerald-500/50",
+  description: "Building production-grade machine learning systems and deploying them to solve real-world problems in finance and beyond",
+  responsibilities: [
+    "Build and deploy production ML models with APIs and pipelines",
+    "Compete in national ML challenges (RBIH, Amazon ML Challenge)",
+    "Implement MLOps workflows with Docker, CI/CD, and cloud deployment",
+    "Develop full-stack AI applications — train it, deploy it, build the frontend",
+    "Collaborate with international quant research firms on live problems"
+  ],
+  skills: ["Python", "XGBoost", "NLP", "MLOps", "React", "Next.js", "FastAPI", "Docker"]
+},
+    {
+      
       id: 1,
       name: "Quant & Crypto",
       icon: Bitcoin,

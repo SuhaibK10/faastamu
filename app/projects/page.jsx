@@ -1,5 +1,5 @@
 import React from "react";
-import { Code, Sparkles, BarChart2, BookOpen, Zap, TrendingUp, Cpu, Database, Shield } from "lucide-react";
+import { Code, Sparkles, BarChart2, BookOpen, Zap, TrendingUp, Cpu, Database, Shield, FileSearch } from "lucide-react";
 
 const TeamSection = ({ title, icon: Icon, children }) => (
   <section className="mb-16">
@@ -81,6 +81,24 @@ export default function Projects() {
       </section>
 
       <div className="container mx-auto px-4 max-w-6xl">
+        {/* Machine Learning Team */}
+  <TeamSection title="Machine Learning Team" icon={Cpu}>
+  <ProjectCard
+    title="Mule Account Detection System"
+    description="End-to-end anomaly detection pipeline to identify mule accounts across 7.4M+ banking transactions for the Reserve Bank Innovation Hub. Implements temporal feature extraction for 12 known laundering typologies including dormant activation, structuring below ₹50K thresholds, rapid pass-through velocity, and fan-in/fan-out graph patterns. Scored on AUC-ROC with temporal IoU for suspicious activity window precision."
+    icon={Shield}
+    iconColor="text-emerald-400"
+    tags={["XGBoost", "Graph Analytics", "Temporal Feature Engineering", "Anomaly Detection", "AUC-ROC"]}
+  />
+  <ProjectCard
+    title="Intelli-Credit Decisioning Engine"
+    description="Multi-agent AI system for automated corporate credit appraisal that ingests unstructured data from PDF annual reports, GST filings, bank statements, and MCA filings. Features a Research Agent for real-time web-scale secondary intelligence and a Recommendation Engine generating explainable Credit Appraisal Memos scored on the Five Cs framework."
+    icon={FileSearch}
+    iconColor="text-blue-400"
+    tags={["LLM Orchestration", "RAG Pipeline", "PDF Extraction", "Explainable AI", "Multi-Agent"]}
+  />
+</TeamSection>
+
         {/* Quant and Crypto Team */}
         <TeamSection title="Quant & Crypto Team" icon={Cpu}>
           <ProjectCard
