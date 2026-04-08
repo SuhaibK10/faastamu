@@ -27,6 +27,14 @@ const coreMembers = [
     position: "Secretary",
     facultyNumber: "23AIBEA338",
   },
+   {
+    name: "Suhaib Ahmad Khan",
+    position:"Machine Learning and Research Lead",
+    facultyNumber: "21CABSA309",
+    department: "Computer Applications",
+    email: "gk4846@amu.ac.in",
+    linkedin: "https://www.linkedin.com/in/suhaibkhan10/",
+  },
   {
     name: "Abdul Bari",
     position: "Member",
@@ -229,9 +237,6 @@ const members = [
     linkedin: "",
   },
 
-  // Quant and Crypto Team
- 
-
   // Research Team
   {
     name: "Aatifa Rizvi",
@@ -249,14 +254,7 @@ const members = [
     email: "",
     linkedin: "",
   },
-  {
-    name: "Suhaib Ahmad Khan",
-    role: "Machine Learning and Research Team",
-    facultyNumber: "21CABSA309",
-    department: "Computer Applications",
-    email: "",
-    linkedin: "",
-  },
+ 
   {
     name: "Vansh Vyas",
     role: "Research Team",
@@ -430,10 +428,6 @@ const Members = () => {
                     key={member.name}
                     className="glass-panel border border-cyan-500/40 bg-[#0a1f3c]/80 rounded-3xl p-8 shadow-[0_0_28px_rgba(0,229,255,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(0,229,255,0.5)] relative"
                   >
-                    {/* <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-cyan-500/10 border border-cyan-500/40 text-cyan-200 uppercase tracking-wide">
-                      Core Team
-                    </div> */}
-
                     <div className="flex items-center gap-4 mb-6">
                       <div className="h-14 w-14 rounded-2xl bg-linear-to-br from-cyan-500 via-blue-600 to-purple-600 flex items-center justify-center text-lg font-bold">
                         {getInitials(member.name)}
@@ -450,6 +444,31 @@ const Members = () => {
                         <dd className="text-white font-medium">{member.facultyNumber}</dd>
                       </div>
                     </dl>
+
+                    {/* ✅ FIX: Email and LinkedIn — only renders if fields exist */}
+                    <div className="mt-8 flex flex-wrap items-center gap-4 text-sm">
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="flex items-center gap-2 text-gray-300 hover:text-cyan-300 transition-colors"
+                        >
+                          <Mail size={16} />
+                          {member.email}
+                        </a>
+                      )}
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          className="flex items-center gap-2 text-gray-300 hover:text-cyan-300 transition-colors"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Linkedin size={16} />
+                          LinkedIn
+                        </a>
+                      )}
+                    </div>
+
                   </article>
                 ))}
               </div>
@@ -484,24 +503,7 @@ const Members = () => {
                   <dt className="text-gray-400">Faculty No.</dt>
                   <dd className="text-white font-medium">{member.facultyNumber}</dd>
                 </div>
-                {/* <div className="flex justify-between gap-4">
-                  <dt className="text-gray-400">Department</dt>
-                  <dd className="text-gray-100 text-right">{member.department}</dd>
-                </div> */}
               </dl>
-
-              {/* <p className="mt-6 text-sm text-gray-200 leading-relaxed">{member.bio}</p> */}
-
-              {/* <div className="mt-6 flex flex-wrap gap-2">
-                {member.focusAreas.map((area) => (
-                  <span
-                    key={`${member.name}-${area}`}
-                    className="text-xs uppercase tracking-wide bg-cyan-500/10 border border-cyan-500/30 text-cyan-200 px-3 py-1 rounded-full"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div> */}
 
               <div className="mt-8 flex flex-wrap items-center gap-4 text-sm">
                 {member.email && (
